@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  padding: $gutter*4 $gutter $gutter $gutter;
+  
+  p.copyright {
+    padding: 0;
+    margin: 0;
+    line-height: $font-size;
+    flex: 1;
+    flex-align: left;
+  }
+}

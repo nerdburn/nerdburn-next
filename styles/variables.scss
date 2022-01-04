@@ -1,7 +1,7 @@
 @use "sass:math";
 
 // General
-$gutter: 16px;
+$gutter: 24px;
 $gutterR: 1rem;
 $gutterE: 1em;
 $border-radius: 0.25rem;
@@ -15,7 +15,7 @@ $drop-shadow: drop-shadow($box-shadow);
 // Typography
 $font-family: 'Helvetica', arial, sans-serif;
 $line-height: 1.6;
-$font-size: 16px;
+$font-size: 24px;
 
 // Colors
 $primary-color: #42a446;

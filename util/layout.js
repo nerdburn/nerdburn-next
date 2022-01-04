@@ -1,9 +1,7 @@
 import BaseLayout from '@/components/layouts/base-layout'
-import AdminLayout from '@/components/layouts/admin-layout'
 
 const LAYOUTS = {
-  'BaseLayout': BaseLayout,
-  'AdminLayout': AdminLayout,
+  'BaseLayout': BaseLayout
 }
 
 export function buildLayout(layouts, Component, pageProps) {

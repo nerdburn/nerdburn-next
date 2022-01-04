@@ -1,7 +1,16 @@
-export const Post = ({ slug, cid }) =>
-  <div className='post'>
-    <h1>Whee</h1>
-    <p>WHee</p>
-    <p>{slug}</p>
-    <p>{cid}</p>
-  </div>
+import { Date } from '@/components/date'
+
+export const Post = ({ post }) => {
+  const { title, date, html } = post
+  
+  if (!post || !title || !date || !html)
+    return <LoadingIndicator />
+    
+  return (
+    <div className='post'>
+      <h1>{title}</h1>
+      <p><Date dateString={date} /></p>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </div>
+  )
+}
