@@ -9,7 +9,6 @@ import { Post } from '@/components/post'
 import { PostList } from '@/components/post-list'
 
 const PostItem = ({ post, posts }) => {
-  console.log('post', post)
   return (
     <>
       <Head>
