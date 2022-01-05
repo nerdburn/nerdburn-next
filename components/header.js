@@ -7,10 +7,10 @@ export const Header = ({ posts }) =>
     <title>nerdburn</title>
   </Head>
   <div className='header'>
-    <h1><Link href='/'>nerdburn</Link></h1>
+    <h1><Link href='/'>n</Link></h1>
     <nav>
       <ul>
-        <li><Link href='/about'>About</Link></li>
+        <li><Link href='/about'>&hellip;</Link></li>
       </ul>
     </nav>
   </div>
