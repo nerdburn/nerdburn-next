@@ -5,6 +5,11 @@ export const Header = ({ posts }) =>
 <>
   <Head>
     <title>nerdburn</title>
+    <meta property="og:title" content="Nerdburn"/>
+    <meta property="og:description" content="Shawn Adrian's blog"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://nrdbrn.xyz"/>
+    <meta property="og:image" content="https://nrdbrn.xyz/public/images/nerdburn-og-image.png"/>
   </Head>
   <div className='header'>
     <h1><Link href='/'>n</Link></h1>
