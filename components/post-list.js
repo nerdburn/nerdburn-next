@@ -6,7 +6,7 @@ export const PostList = ({ posts }) =>
     <ul>
       {posts.map(({ id, date, title }) => (
         <li key={id}>
-          <Link href={`posts/${id}`}>{title}</Link>
+          <Link href={`/posts/${id}`}>{title}</Link>
         </li>
       ))}
     </ul>
