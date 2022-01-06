@@ -13,7 +13,7 @@ const PostItem = ({ post, posts }) => {
     <>
       <Head>
         <title>nerdburn | {post.title}</title>
-        <meta property="og:title" content=`Nerdburn | ${post.title}`/>
+        <meta property="og:title" content={`Nerdburn | ${post.title}`} />
         <meta property="og:description" content="A collection of articles written by Shawn Adrian, a designer, developer, and blogger since 2000."/>
       </Head>
       <Post post={post} />
