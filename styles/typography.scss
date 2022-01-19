@@ -129,6 +129,10 @@ p {
   &.smaller {
     font-size: 0.8125em;
   }
+  
+  @media #{$phone} {
+    font-size: 0.8125em;
+  }
 }
 
 a {
