@@ -1,9 +1,6 @@
 import Head from 'next/head'
 
-import { Header } from '@/components/header'
 import { getPosts, getLatestPost } from '@/util/posts'
-import { LoadingIndicator } from '@/components/loading-indicator'
-
 import { Post } from '@/components/post'
 import { PostList } from '@/components/post-list'
 
@@ -20,7 +17,7 @@ const Index = ({ post, posts }) => {
 }
 
 export async function getStaticProps() {
-  const posts = getPosts()
+  const posts = getPosts().slice(1)
   const post = await getLatestPost()
   return {
     props: {

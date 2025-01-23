@@ -3,6 +3,7 @@ import html from 'remark-html'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { visit } from 'unist-util-visit'
 
 const postsDirectory = path.join(process.cwd(), 'content')
 
@@ -13,6 +14,7 @@ const getId = (fileName) => {
   return fileName.replace('&', 'and').replace(`'`, '').replace(/\.md$/, '')
 }
 
+// returns list of posts without html content
 export function getPosts() {
   
   // Get file names under /posts
@@ -79,6 +81,38 @@ export function getPostIds() {
   })
 }
 
+// New remark plugin for tweet transformation
+function remarkTweets() {
+  return (tree) => {
+    visit(tree, 'paragraph', (node) => {
+      const { children } = node
+      
+      // Look for tweet syntax in text nodes
+      children.forEach((child, index) => {
+        if (child.type !== 'text') return
+        
+        const matches = child.value.match(/{%\s*tweet\s+url="([^"]+)"\s*%}/g)
+        if (!matches) return
+        
+        // Replace the text node with HTML node
+        matches.forEach(match => {
+          const url = match.match(/url="([^"]+)"/)[1]
+          const tweetId = url.split('/').pop()
+          
+          child.type = 'html'
+          child.value = `
+            <div class="tweet" data-tweet-id="${tweetId}">
+              <blockquote class="twitter-tweet">
+                <a href="${url}">Loading tweet...</a>
+              </blockquote>
+              <script async src="https://platform.twitter.com/widgets.js"></script>
+            </div>`
+        })
+      })
+    })
+  }
+}
+
 export async function getPostById(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -88,6 +122,7 @@ export async function getPostById(id) {
   
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
+    .use(remarkTweets) // Add the tweet plugin
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
@@ -112,9 +147,10 @@ export async function getLatestPost() {
   
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
+    .use(remarkTweets) // Add the tweet plugin
     .use(html)
     .process(matterResult.content)
-  const contentHtml = processedContent.toString()  
+  const contentHtml = processedContent.toString()
   
   // Combine the data with the id and contentHtml
   return {

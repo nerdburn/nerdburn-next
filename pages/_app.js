@@ -1,14 +1,13 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import Index from './index'
 import { buildLayout } from '@/util/layout'
 import { init, trackPage } from '@/util/analytics'
 
 import '@/styles/index.scss'
 
-function App({ Component, pageProps, router }) {
-  
+function App({ Component, pageProps }) {
+  const router = useRouter()
   // initiate google analytics and track page
   useEffect(() => {
     init()

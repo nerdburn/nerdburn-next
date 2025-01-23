@@ -1,8 +1,5 @@
 import Head from 'next/head'
 
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { useStore } from '@/util/store'
 import { getPosts, getPostIds, getPostById } from '@/util/posts'
 
 import { Post } from '@/components/post'
