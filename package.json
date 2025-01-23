@@ -21,7 +21,7 @@
     "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-ga": "^3.3.0",
+    "react-ga4": "^2.1.0",
     "react-hook-form": "latest",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",

@@ -1,16 +1,7 @@
-import Head from 'next/head'
-
-import { useEffect } from 'react'
-
-import { useStore } from '@/util/store'
-import { apiUrl } from '@/util/urls'
 import { getPosts } from '@/util/posts'
-
-import { Header } from '@/components/header'
 import { PostList } from '@/components/post-list'
 
 const Index = ({ posts }) => {
-  const setModal = useStore((state) => state.setModal)
 
   return (
     <>

@@ -1,4 +1,4 @@
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 const TRACKING_ID = 'G-6QVSLCQ30W'
 
@@ -7,15 +7,17 @@ export const init = () => {
 }
 
 export const trackPage = (page) => {
-  ReactGA.pageview(page)
+  ReactGA.send({ 
+    hitType: "pageview", 
+    page, 
+    title: "Custom Title" 
+  })
 }
 
-export const trackEvent = (categoryName, eventName) => {
+export const trackEvent = (categoryName, eventName, additionalParams = {}) => {
   ReactGA.event({
-    category: categoryName, // Required
-    action: eventName, // Required
-    label: 'labelName',
-    value: 10,
-    nonInteraction: false,
+    category: categoryName,
+    action: eventName,
+    ...additionalParams
   })
 }
