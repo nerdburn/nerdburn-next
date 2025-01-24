@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .footer {
   display: flex;
   padding: $gutter*4 $gutter $gutter $gutter;

@@ -6,12 +6,18 @@ import { Post } from '@/components/post'
 import { PostList } from '@/components/post-list'
 
 const PostItem = ({ post, posts }) => {
+  const staticDescription = post.html?.replace(/<[^>]*>/g, '').substring(0, 155).trim() + '...'
   return (
     <>
       <Head>
         <title>nerdburn | {post.title}</title>
-        <meta property="og:title" content={`Nerdburn | ${post.title}`} />
-        <meta property="og:description" content="A collection of articles written by Shawn Adrian, a designer, developer, and blogger since 2000."/>
+        <meta property="og:title" content={`${post.title}`} />
+        <meta property="og:description" content={staticDescription} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/nerdburn-og-image.png`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`${post.title}`} />
+        <meta name="twitter:description" content={staticDescription} />
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/nerdburn-og-image.png`} />
       </Head>
       <Post post={post} />
       <PostList posts={posts} />

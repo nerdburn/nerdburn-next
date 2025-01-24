@@ -7,10 +7,11 @@ export const init = () => {
 }
 
 export const trackPage = (page) => {
+  console.log('trackPage', page)
   ReactGA.send({ 
     hitType: "pageview", 
-    page, 
-    title: "Custom Title" 
+    page: page,
+    title: page 
   })
 }
 

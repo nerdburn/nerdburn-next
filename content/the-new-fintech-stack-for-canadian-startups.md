@@ -11,7 +11,7 @@ Fast forward to 2025 — [Gavin](https://geekforbrains.com) and I are spinning u
 
 [https://twitter.com/shawnhooper/status/1864439531644309921](https://twitter.com/shawnhooper/status/1864439531644309921)
 
-Along with the big 5 banks, a few digital options emerged. Most notably Loop, Vault, and Finofo. Here’s the stack I eventually settled on. 
+Along with the big 5 banks, a few digital options emerged. Most notably [Loop](https://bankonloop.com), [Float](https://floatfinancial.com), [Vault](https://tryvault.com), and [Finofo](https://finofo.com). Here’s the stack I eventually settled on. 
 
 ### Incorporation (Ownr)
 
@@ -19,7 +19,7 @@ First, I chatted with ChatGPT to generate the Articles of Incorporation and Shar
 
 ### Primary Banking (Vault)
 
-I have used [Loop](https://bankonloop.com), [Float](https://floatfinancial.com) and [Vault](https://tryvault.com) before, and had an active employee expense card in Vault for our coworking space, and then [Saud](https://twitter.com/sauddaziz) popped into my Twitter thread and I discovered I could use them for receivables — I decided to go all in on Vault. I’ll report back in a few months once we’re making real money in there. 
+I have used Loop, Float, and Vault before, and already had an active employee expense card in Vault for our coworking space, and then [Saud](https://twitter.com/sauddaziz) popped into my Twitter thread and I discovered I could use them for receivables — I decided to go all in on Vault. I’ll report back in a few months once we’re making real money in there. 
 
 ### Payroll (Humi)
 

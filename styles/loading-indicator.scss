@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @keyframes blink {
   0% {
     opacity: 0.2;

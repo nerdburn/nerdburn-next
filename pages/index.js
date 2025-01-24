@@ -8,7 +8,16 @@ const Index = ({ post, posts }) => {
   return (
     <>
       <Head>
-        <title>nerdburn</title>
+        <meta property="og:title" content="nerdburn"/>
+        <meta property="og:description" content="A collection of articles written by Shawn Adrian, a designer, developer, and blogger since 2000."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://nrdbrn.xyz"/>
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/nerdburn-og-image.png`} />
+        <meta property="og:site_name" content="nerdburn" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="nerdburn" />
+        <meta name="twitter:description" content="A collection of articles written by Shawn Adrian, a designer, developer, and blogger since 2000." />
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/nerdburn-og-image.png`} />
       </Head>
       <Post post={post} />
       <PostList posts={posts} />
