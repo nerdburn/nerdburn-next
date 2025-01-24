@@ -7,9 +7,7 @@ In 2023, I decided to build a carriage house in my front yard. The catch was I w
 
 After a couple of decades of carefully recovering from bankruptcy (after a failed startup), I have perfect credit, so I wasn't worried about being approved. Within minutes, approvals started coming in: Tangerine, MNBA, Neo, and… my primary business bank for over 10 years, TD, declined. For context on my personal vendetta here, my software company [Input](https://inputlogic.ca) employs around 25 people full-time, and we keep enough money in the bank to float the business for 3-6 months. TD has been making bank on us for a decade (see what I did there).
 
-Fast forward to 2025 — [Gavin](https://geekforbrains.com) and I are spinning up a branding studio with two of the most badass designers on the planet, [Sebastian Abboud](https://sebastianabboud.com) and [Nick Johnston](https://nickjohnston.ca/). After spending far too much time choosing a name, [Diver](https://diver.studio) (web site coming soon), we needed to incorporate and get all the banking sorted out. I asked the wise folks on Twitter who I should bank with: 
-
-[https://twitter.com/shawnhooper/status/1864439531644309921](https://twitter.com/shawnhooper/status/1864439531644309921)
+Fast forward to 2025 — [Gavin](https://geekforbrains.com) and I are spinning up a branding studio with two of the most badass designers on the planet, [Sebastian Abboud](https://sebastianabboud.com) and [Nick Johnston](https://nickjohnston.ca/). After spending far too much time choosing a name, [Diver](https://diver.studio) (web site coming soon), we needed to incorporate and get all the banking sorted out. I [asked the wise folks on Twitter](https://twitter.com/shawnhooper/status/1864439531644309921) who I should bank with.
 
 Along with the big 5 banks, a few digital options emerged. Most notably [Loop](https://bankonloop.com), [Float](https://floatfinancial.com), [Vault](https://tryvault.com), and [Finofo](https://finofo.com). Here’s the stack I eventually settled on. 
 
@@ -31,9 +29,7 @@ I discovered [Tedy](https://tedy.app) last year while searching for better ways 
 
 ### Accounting (Ceedar)
 
-A year or so ago, I was having coffee with [Connor](https://twitter.com/entrecurious) and Pegah as they described their AI bookkeeping startup idea to me — I was intrigued but admittedly I didn’t follow along too closely afterward. Then out of nowhere Andrew Wilkinson tweeted excitedly about [Ceedar](https://ceedar.ai), their product which had just launched:
-
-[https://twitter.com/awilkinson/status/1864726181670719859](https://twitter.com/awilkinson/status/1864726181670719859)
+A year or so ago, I was having coffee with [Connor](https://twitter.com/entrecurious) and Pegah as they described their AI bookkeeping startup idea to me — I was intrigued but admittedly I didn’t follow along too closely afterward. Then out of nowhere Andrew Wilkinson [tweeted excitedly](https://twitter.com/awilkinson/status/1864726181670719859) about [Ceedar](https://ceedar.ai), their product which had just launched.
 
 Big praise from Andrew, so I immediately reached out to Connor and am trying it out as a Xero alternative. So far I’m super happy and literally begging Connor to let me invest (he’s not taking outside capital, yet). 
 
