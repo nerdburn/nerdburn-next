@@ -1,5 +1,5 @@
 ---
-title: 'Automating Podcast Prep Work with AI'
+title: 'Automating podcast prep work with AI'
 date: '2025-02-06'
 ---
 
