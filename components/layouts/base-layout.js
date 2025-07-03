@@ -30,7 +30,7 @@ const BaseLayout = ({ children }) => {
         
         {/* Additional SEO */}
         <meta name="theme-color" content="#000000" />
-        <link rel="canonical" href="https://nrdbrn.xyz" />
+        <link rel="canonical" href="https://www.nrdbrn.xyz" />
       </Head>
       <Header />
       <div className='container'>
