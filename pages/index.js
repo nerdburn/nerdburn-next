@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { getPosts, getLatestPost } from '@/util/posts'
 import { Post } from '@/components/post'
 import { PostList } from '@/components/post-list'
+import Script from 'next/script'
 
 const Index = ({ post, posts }) => {
   return (
@@ -18,10 +19,10 @@ const Index = ({ post, posts }) => {
         <meta name="twitter:title" content="nerdburn" />
         <meta name="twitter:description" content="A collection of articles written by Shawn Adrian, a designer, developer, and blogger since 2000." />
         <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/nerdburn-og-image.png`} />
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="dorXtQ0JnCiGIA6uB2uDHg" async></script>
       </Head>
       <Post post={post} />
       <PostList posts={posts} />
+      <Script src="https://analytics.ahrefs.com/analytics.js" data-key="dorXtQ0JnCiGIA6uB2uDHg" async />
     </>
   )
 }

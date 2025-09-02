@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import { buildLayout } from '@/util/layout'
 import { init, trackPage } from '@/util/analytics'
+import Script from 'next/script'
 
 import '@/styles/index.scss'
 
@@ -20,8 +21,19 @@ function App({ Component, pageProps }) {
   // just do default behavior
   ValidComponent = Component
 
-  // Wrap component in layouts (if it has them) and inject props, user and token
-  return buildLayout(ValidComponent.Layouts || [], ValidComponent, {...pageProps})
+  return (
+    <>
+      {buildLayout(ValidComponent.Layouts || [], ValidComponent, {...pageProps})}
+      <Script
+        strategy="afterInteractive"
+        data-domain="nerdburn.com"
+        src="https://plausible.io/js/script.pageview-props.tagged-events.js"
+      />
+      <Script id="plausible-init" strategy="afterInteractive">
+        {`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}
+      </Script>
+    </>
+  )
 }
 
 export default App
