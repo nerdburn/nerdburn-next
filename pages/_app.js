@@ -32,6 +32,11 @@ function App({ Component, pageProps }) {
       <Script id="plausible-init" strategy="afterInteractive">
         {`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}
       </Script>
+      <Script 
+        src="https://analytics.ahrefs.com/analytics.js" 
+        data-key="yBw/VldXXu30C6Udi+KYrg" 
+        async
+      />
     </>
   )
 }
