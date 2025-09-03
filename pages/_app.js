@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { buildLayout } from '@/util/layout'
 import { init, trackPage } from '@/util/analytics'
 import Script from 'next/script'
+import Head from 'next/head'
 
 import '@/styles/index.scss'
 
@@ -23,6 +24,13 @@ function App({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <Script 
+          src="https://analytics.ahrefs.com/analytics.js" 
+          data-key="yBw/VldXXu30C6Udi+KYrg" 
+          async
+        />
+      </Head>
       {buildLayout(ValidComponent.Layouts || [], ValidComponent, {...pageProps})}
       <Script
         strategy="afterInteractive"
@@ -32,11 +40,6 @@ function App({ Component, pageProps }) {
       <Script id="plausible-init" strategy="afterInteractive">
         {`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}
       </Script>
-      <Script 
-        src="https://analytics.ahrefs.com/analytics.js" 
-        data-key="yBw/VldXXu30C6Udi+KYrg" 
-        async
-      />
     </>
   )
 }
