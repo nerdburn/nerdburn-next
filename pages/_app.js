@@ -24,13 +24,11 @@ function App({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
-        <Script 
-          src="https://analytics.ahrefs.com/analytics.js" 
-          data-key="yBw/VldXXu30C6Udi+KYrg" 
-          async
-        />
-      </Head>
+      <Script 
+        src="https://analytics.ahrefs.com/analytics.js" 
+        data-key="yBw/VldXXu30C6Udi+KYrg" 
+        strategy="afterInteractive"
+      />
       {buildLayout(ValidComponent.Layouts || [], ValidComponent, {...pageProps})}
       <Script
         strategy="afterInteractive"
