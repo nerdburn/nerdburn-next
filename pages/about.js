@@ -1,5 +1,6 @@
 import { getPosts } from '@/util/posts'
 import { PostList } from '@/components/post-list'
+import Head from 'next/head'
 
 const Index = ({ posts }) => {
 
