@@ -5,7 +5,7 @@ export default function handler(req, res) {
   const posts = getPosts()
   
   // Base URL of your site
-  const baseUrl = 'https://nrdbrn.xyz'
+  const baseUrl = 'https://nerdburn.com'
   
   // Static pages
   const staticPages = [

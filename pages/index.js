@@ -9,16 +9,31 @@ const Index = ({ post, posts }) => {
   return (
     <>
       <Head>
-        <meta property="og:title" content="nerdburn"/>
-        <meta property="og:description" content="A collection of articles written by Shawn Adrian, a designer, developer, and blogger since 2000."/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://nrdbrn.xyz"/>
-        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/nerdburn-og-image.png`} />
+        <title>nerdburn | Startups & design blog by Shawn Adrian</title>
+        <meta name="description" content="Insights on technology, startups, web3, AI automation, fintech, and digital innovation by Shawn Adrian - a designer, developer, and entrepreneur since 2000." />
+        <meta name="keywords" content="web3, blockchain, AI automation, fintech, startups, entrepreneurship, digital art, NFTs, IPFS, decentralization, Canadian fintech, podcast automation, content management, design, development, tech innovation" />
+        <meta name="author" content="Shawn Adrian" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="nerdburn - Shawn Adrian's blog about startups and design (since 2004)" />
+        <meta property="og:description" content="Insights on technology, startups, web3, AI automation, fintech, and digital innovation by Shawn Adrian - a designer, developer, and entrepreneur since 2000." />
+        <meta property="og:url" content="https://nerdburn.com" />
+        <meta property="og:image" content="https://nerdburn.com/images/nerdburn-og-image.png" />
         <meta property="og:site_name" content="nerdburn" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="nerdburn" />
-        <meta name="twitter:description" content="A collection of articles written by Shawn Adrian, a designer, developer, and blogger since 2000." />
-        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/nerdburn-og-image.png`} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="nerdburn - Shawn Adrian's blog about startups and design (since 2004)" />
+        <meta name="twitter:description" content="Insights on technology, startups, web3, AI automation, fintech, and digital innovation by Shawn Adrian - a designer, developer, and entrepreneur since 2000." />
+        <meta name="twitter:image" content="https://nerdburn.com/images/nerdburn-og-image.png" />
+        <meta name="twitter:creator" content="@nerdburn" />
+        
+        {/* Additional SEO */}
+        <meta name="theme-color" content="#000000" />
+        <link rel="canonical" href="https://www.nerdburn.com" />      
       </Head>
       <Post post={post} />
       <PostList posts={posts} />

@@ -32,7 +32,7 @@ function getPosts() {
 
 function generateSitemap() {
   const posts = getPosts()
-  const baseUrl = 'https://nrdbrn.xyz'
+  const baseUrl = 'https://nerdburn.com'
   
   // Static pages
   const staticPages = [

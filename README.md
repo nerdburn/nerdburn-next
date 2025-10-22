@@ -82,7 +82,7 @@ export default PageComponent
 Create a `.env.local` file in the project root:
 
 ```bash
-NEXT_PUBLIC_DOMAIN=https://nrdbrn.xyz
+NEXT_PUBLIC_DOMAIN=https://nerdburn.com
 ```
 
 ### Installation & Running
