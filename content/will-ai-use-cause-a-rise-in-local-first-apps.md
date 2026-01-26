@@ -1,6 +1,6 @@
 ---
 title: 'Will AI use cause a rise in local-first web and mobile apps?'
-date: '2025-01-26'
+date: '2026-01-26'
 ---
 
 I finally got on the Obsidian bandwagon after years of wandering the note-taking desert. A little Notion here, a bit of Apple notes there, some things lost in email, a few bookmarks on X — basically, ever since I quit Evernote, I've been floating between note-taking solutions.
