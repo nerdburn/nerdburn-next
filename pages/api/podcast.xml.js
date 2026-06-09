@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 export default function handler(req, res) {
-  const episodesPath = path.join(process.cwd(), 'content', 'podcast-episodes.json')
+  const episodesPath = path.join(process.cwd(), 'data', 'podcast-episodes.json')
   const episodes = JSON.parse(fs.readFileSync(episodesPath, 'utf8'))
 
   const baseUrl = 'https://nerdburn.com'
