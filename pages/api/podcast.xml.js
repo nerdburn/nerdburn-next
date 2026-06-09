@@ -31,6 +31,7 @@ export default function handler(req, res) {
       <itunes:name>Shawn Adrian</itunes:name>
       <itunes:email>shawn@inputlogic.ca</itunes:email>
     </itunes:owner>
+    <itunes:image href="${baseUrl}/podcast/artwork.png" />
     <itunes:category text="Technology" />
     <itunes:explicit>false</itunes:explicit>
 ${items}
