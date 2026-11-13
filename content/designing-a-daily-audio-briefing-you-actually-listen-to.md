@@ -11,7 +11,9 @@ I still push code every day on client products while running my 10 person studio
 
 ### First attempt
 
-My first pass at a daily briefing was literally just asking my personal agent (Claude) to DM me a briefing in Slack.
+My first pass at a daily briefing was literally just asking my personal agent (Claude) to DM me a briefing in Slack:
+
+![My first daily briefing, sent as a Slack DM (details blurred)](/images/daily-briefing-slack.png)
 
 Key features:
 
