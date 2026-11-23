@@ -7,7 +7,9 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
 
 const FONT = 'Helvetica, Arial, sans-serif'
 const PAGE_COLOR = '#efe9da'
-const BOARD = 0.024 // thickness of a hardcover board
+const BOARD = 0.036 // thickness of a hardcover board
+const CORNER = 0.017 // rounding on the board edges
+const ART_INSET = 0.02 // artwork stops short of the rounded edge
 const PAGE_INSET = 0.04 // how far the pages sit inside the boards
 
 // [cover, ink] pairs, one per series
@@ -102,6 +104,45 @@ const fitText = (ctx, text, maxWidth) => {
   return cut.trimEnd() + '…'
 }
 
+// Fine speckle so the jackets read as printed paper rather than flat colour
+const addGrain = (ctx, width, height, seed) => {
+  const random = seeded(seed)
+  const specks = Math.round((width * height) / 90)
+  ctx.save()
+  ctx.setTransform(1, 0, 0, 1, 0, 0)
+  ctx.globalAlpha = 1
+  for (let i = 0; i < specks; i++) {
+    const alpha = 0.03 + random() * 0.07
+    ctx.fillStyle = random() > 0.5 ? `rgba(255, 255, 255, ${alpha})` : `rgba(0, 0, 0, ${alpha})`
+    const size = 0.6 + random() * 1.8
+    ctx.fillRect(random() * width, random() * height, size, size)
+  }
+  ctx.restore()
+}
+
+// A shared bump texture gives the cloth a slight tooth under the lights
+const makeGrainTexture = () => {
+  const size = 128
+  const canvas = document.createElement('canvas')
+  canvas.width = size
+  canvas.height = size
+  const ctx = canvas.getContext('2d')
+  if (ctx) {
+    const random = seeded('grain')
+    const image = ctx.createImageData(size, size)
+    for (let i = 0; i < image.data.length; i += 4) {
+      const value = 96 + Math.floor(random() * 128)
+      image.data[i] = image.data[i + 1] = image.data[i + 2] = value
+      image.data[i + 3] = 255
+    }
+    ctx.putImageData(image, 0, 0)
+  }
+  const texture = new THREE.CanvasTexture(canvas)
+  texture.wrapS = texture.wrapT = THREE.RepeatWrapping
+  texture.repeat.set(5, 5)
+  return texture
+}
+
 // Shrinking the art to a few pixels and scaling it back up gives a soft blur
 // that works in every browser, plus a cheap way to read its brightness
 const softened = (image, sx, sw, cols, rows) => {
@@ -155,6 +196,7 @@ const drawSpine = (canvas, item, image) => {
     ctx.fillStyle = item.cover
     ctx.fillRect(0, 0, width, length)
   }
+  addGrain(ctx, width, length, item.book.title + 'spine')
   ctx.fillStyle = ink
   ctx.globalAlpha = 0.5
   ctx.fillRect(0, 34, width, 3)
@@ -203,6 +245,7 @@ const drawSoft = (canvas, image, mirrored) => {
   ctx.drawImage(tiny, 0, 0, size, size)
   ctx.fillStyle = mirrored ? 'rgba(0, 0, 0, 0.18)' : 'rgba(0, 0, 0, 0)'
   ctx.fillRect(0, 0, size, size)
+  addGrain(ctx, size, size, 'back')
   return average
 }
 
@@ -238,6 +281,7 @@ const drawCover = (canvas, item, image) => {
 
   if (image) {
     ctx.drawImage(image, 0, 0, size, size)
+    addGrain(ctx, size, size, item.book.title + 'cover')
     return
   }
   ctx.fillStyle = item.cover
@@ -315,6 +359,9 @@ const createShelf = (canvas, books, callbacks) => {
 
   const pageMaterial = track(new THREE.MeshStandardMaterial({ color: PAGE_COLOR, roughness: 0.95 }))
   const maxAnisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy())
+  const grainTexture = track(makeGrainTexture())
+  const grainy = (options) =>
+    track(new THREE.MeshStandardMaterial({ bumpMap: grainTexture, bumpScale: 0.8, ...options }))
 
   const solid = (geometry, material) => {
     const mesh = new THREE.Mesh(track(geometry), material)
@@ -340,20 +387,20 @@ const createShelf = (canvas, books, callbacks) => {
     spineTexture.colorSpace = THREE.SRGBColorSpace
     spineTexture.anisotropy = maxAnisotropy
 
-    const boardMaterial = track(new THREE.MeshStandardMaterial({ color: item.cover, roughness: 0.8 }))
-    const frontMaterial = track(new THREE.MeshStandardMaterial({ color: item.cover, roughness: 0.7 }))
-    const backMaterial = track(new THREE.MeshStandardMaterial({ color: item.cover, roughness: 0.75 }))
-    const spineMaterial = track(new THREE.MeshStandardMaterial({ map: spineTexture, roughness: 0.75 }))
+    const boardMaterial = grainy({ color: item.cover, roughness: 0.85 })
+    const frontMaterial = grainy({ color: item.cover, roughness: 0.75 })
+    const backMaterial = grainy({ color: item.cover, roughness: 0.8 })
+    const spineMaterial = grainy({ map: spineTexture, roughness: 0.8 })
 
     const group = new THREE.Group()
     group.position.set(item.x, height / 2, 0)
 
-    const coverGeometry = track(new RoundedBoxGeometry(BOARD, height, depth, 2, 0.009))
+    const coverGeometry = track(new RoundedBoxGeometry(BOARD, height, depth, 4, CORNER))
     const frontBoard = solid(coverGeometry, boardMaterial)
     frontBoard.position.x = thickness / 2 - BOARD / 2
     const backBoard = solid(coverGeometry, boardMaterial)
     backBoard.position.x = -(thickness / 2 - BOARD / 2)
-    const spineBoard = solid(new RoundedBoxGeometry(thickness, height, BOARD, 2, 0.009), boardMaterial)
+    const spineBoard = solid(new RoundedBoxGeometry(thickness, height, BOARD, 4, CORNER), boardMaterial)
     spineBoard.position.z = depth / 2 - BOARD / 2
 
     const pagesDepth = depth - BOARD - PAGE_INSET
@@ -363,13 +410,13 @@ const createShelf = (canvas, books, callbacks) => {
     )
     pages.position.z = depth / 2 - BOARD - pagesDepth / 2
 
-    const frontArt = artwork(depth - 0.024, height - 0.024, frontMaterial)
+    const frontArt = artwork(depth - ART_INSET * 2, height - ART_INSET * 2, frontMaterial)
     frontArt.rotation.y = Math.PI / 2
     frontArt.position.x = thickness / 2 + 0.002
-    const backArt = artwork(depth - 0.024, height - 0.024, backMaterial)
+    const backArt = artwork(depth - ART_INSET * 2, height - ART_INSET * 2, backMaterial)
     backArt.rotation.y = -Math.PI / 2
     backArt.position.x = -(thickness / 2 + 0.002)
-    const spineArt = artwork(thickness - 0.02, height - 0.024, spineMaterial)
+    const spineArt = artwork(thickness - ART_INSET * 2, height - ART_INSET * 2, spineMaterial)
     spineArt.position.z = depth / 2 + 0.002
 
     group.add(frontBoard, backBoard, spineBoard, pages, frontArt, backArt, spineArt)

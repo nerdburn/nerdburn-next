@@ -371,6 +371,118 @@
     "cover": "https://m.media-amazon.com/images/I/51dI1fAR1OL._SL500_.jpg"
   },
   {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "series": "Dune",
+    "url": "https://www.audible.ca/pd/B071F6P482",
+    "cover": "https://m.media-amazon.com/images/I/41rrXYM-wHL._SL500_.jpg"
+  },
+  {
+    "title": "Dune Messiah",
+    "author": "Frank Herbert",
+    "series": "Dune",
+    "url": "https://www.audible.ca/pd/B072HQVC5H",
+    "cover": "https://m.media-amazon.com/images/I/41dcXp9bIoL._SL500_.jpg"
+  },
+  {
+    "title": "Children of Dune",
+    "author": "Frank Herbert",
+    "series": "Dune",
+    "url": "https://www.audible.ca/pd/B072FF8BLZ",
+    "cover": "https://m.media-amazon.com/images/I/51Vi0xHNn8L._SL500_.jpg"
+  },
+  {
+    "title": "God Emperor of Dune",
+    "author": "Frank Herbert",
+    "series": "Dune",
+    "url": "https://www.audible.ca/pd/B0719GKNZ7",
+    "cover": "https://m.media-amazon.com/images/I/51bxlEARcRL._SL500_.jpg"
+  },
+  {
+    "title": "Leviathan Wakes",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B073HB3JFF",
+    "cover": "https://m.media-amazon.com/images/I/51k1SFxFtgL._SL500_.jpg"
+  },
+  {
+    "title": "Caliban's War",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B075DL88V8",
+    "cover": "https://m.media-amazon.com/images/I/51D0y8OuFJL._SL500_.jpg"
+  },
+  {
+    "title": "Abaddon's Gate",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B07GQ7FVXR",
+    "cover": "https://m.media-amazon.com/images/I/51fOX1t9smL._SL500_.jpg"
+  },
+  {
+    "title": "Cibola Burn",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B07286G358",
+    "cover": "https://m.media-amazon.com/images/I/51+ZJjo8khL._SL500_.jpg"
+  },
+  {
+    "title": "Nemesis Games",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B07286XD1R",
+    "cover": "https://m.media-amazon.com/images/I/61WRttCakxL._SL500_.jpg"
+  },
+  {
+    "title": "Babylon's Ashes",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B0725M3Q16",
+    "cover": "https://m.media-amazon.com/images/I/61J2kuefYaL._SL500_.jpg"
+  },
+  {
+    "title": "Persepolis Rising",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B077SLKDMB",
+    "cover": "https://m.media-amazon.com/images/I/6158iO8sCEL._SL500_.jpg"
+  },
+  {
+    "title": "Tiamat's Wrath",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/B07GFNQ5XY",
+    "cover": "https://m.media-amazon.com/images/I/51QJFkl+7DL._SL500_.jpg"
+  },
+  {
+    "title": "Leviathan Falls",
+    "author": "James S. A. Corey",
+    "series": "The Expanse",
+    "url": "https://www.audible.ca/pd/1980035962",
+    "cover": "https://m.media-amazon.com/images/I/51h23gNUoUL._SL500_.jpg"
+  },
+  {
+    "title": "The Three-Body Problem",
+    "author": "Cixin Liu",
+    "series": "Remembrance of Earth's Past",
+    "url": "https://www.audible.ca/pd/B07148GH11",
+    "cover": "https://m.media-amazon.com/images/I/518UKlc1WKL._SL500_.jpg"
+  },
+  {
+    "title": "The Dark Forest",
+    "author": "Cixin Liu",
+    "series": "Remembrance of Earth's Past",
+    "url": "https://www.audible.ca/pd/B071NY25DZ",
+    "cover": "https://m.media-amazon.com/images/I/51I5EI0XjyL._SL500_.jpg"
+  },
+  {
+    "title": "Death's End",
+    "author": "Cixin Liu",
+    "series": "Remembrance of Earth's Past",
+    "url": "https://www.audible.ca/pd/B071Z4RJQ9",
+    "cover": "https://m.media-amazon.com/images/I/51X8-stMNAL._SL500_.jpg"
+  },
+  {
     "title": "Blade Runner",
     "author": "Philip K. Dick",
     "url": "https://www.audible.ca/pd/B07287R7W5",
