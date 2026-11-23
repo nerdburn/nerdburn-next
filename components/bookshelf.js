@@ -107,12 +107,12 @@ const fitText = (ctx, text, maxWidth) => {
 // Fine speckle so the jackets read as printed paper rather than flat colour
 const addGrain = (ctx, width, height, seed) => {
   const random = seeded(seed)
-  const specks = Math.round((width * height) / 90)
+  const specks = Math.round((width * height) / 60)
   ctx.save()
   ctx.setTransform(1, 0, 0, 1, 0, 0)
   ctx.globalAlpha = 1
   for (let i = 0; i < specks; i++) {
-    const alpha = 0.03 + random() * 0.07
+    const alpha = 0.05 + random() * 0.1
     ctx.fillStyle = random() > 0.5 ? `rgba(255, 255, 255, ${alpha})` : `rgba(0, 0, 0, ${alpha})`
     const size = 0.6 + random() * 1.8
     ctx.fillRect(random() * width, random() * height, size, size)
@@ -361,7 +361,7 @@ const createShelf = (canvas, books, callbacks) => {
   const maxAnisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy())
   const grainTexture = track(makeGrainTexture())
   const grainy = (options) =>
-    track(new THREE.MeshStandardMaterial({ bumpMap: grainTexture, bumpScale: 0.8, ...options }))
+    track(new THREE.MeshStandardMaterial({ bumpMap: grainTexture, bumpScale: 1.8, ...options }))
 
   const solid = (geometry, material) => {
     const mesh = new THREE.Mesh(track(geometry), material)
