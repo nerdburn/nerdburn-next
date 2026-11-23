@@ -1,6 +1,10 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
 import books from '../data/books.json'
+
+// WebGL only, so it renders in the browser; the list below is the fallback
+const Bookshelf = dynamic(() => import('@/components/bookshelf'), { ssr: false })
 
 const description = 'Books Shawn Adrian has been listening to on Audible.'
 
@@ -46,6 +50,7 @@ const Reading = ({ books }) => {
       <div className='reading'>
         <h1>Reading</h1>
         <p>Books I've been listening to on Audible.</p>
+        <Bookshelf books={books} />
         {books.length === 0
           ? <p className='reading-empty'>Nothing here yet.</p>
           : (

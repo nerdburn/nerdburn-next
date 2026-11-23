@@ -6,12 +6,15 @@
     list-style: none;
   }
 
+  // Smaller and lighter than the series headings so the two don't compete
   ul li {
     list-style: none;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
+    font-size: 0.8125em;
 
-    @media #{$phone} {
-      font-size: 0.8125em;
+    a {
+      font-weight: normal;
+      text-decoration-thickness: 1px;
     }
   }
 
@@ -23,10 +26,88 @@
 
 .reading-group {
   h4 {
-    margin-bottom: 0.3em;
+    margin-bottom: 0.25em;
   }
 
   ul {
     margin-bottom: 1.45em;
+  }
+}
+
+// Full-bleed shelf: break out of the centred container to the viewport edges
+body:has(.shelf-bleed) {
+  overflow-x: clip;
+}
+
+.shelf {
+  margin-bottom: 1.3em;
+}
+
+.shelf-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 540px;
+
+  @media #{$phone} {
+    height: 440px;
+  }
+}
+
+.shelf-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+  outline: none;
+  // Let the ground shadow fade out instead of ending at the canvas edge
+  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  user-select: none;
+  -webkit-user-select: none;
+
+  &.is-dragging {
+    cursor: grabbing !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $text-color;
+    outline-offset: -2px;
+  }
+}
+
+.shelf-caption {
+  min-height: 4.2em;
+  padding-top: 0.6em;
+
+  p {
+    margin-bottom: 0.2em;
+  }
+
+  .shelf-hint {
+    color: $text-color-alt;
+  }
+
+  .shelf-actions {
+    font-size: 0.8125em;
+
+    button {
+      margin-left: 1em;
+      padding: 0;
+      border: 0;
+      background: none;
+      font: inherit;
+      font-weight: 600;
+      color: $text-color;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+        background-color: $text-color;
+        color: #fff;
+      }
+    }
   }
 }
