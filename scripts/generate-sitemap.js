@@ -47,6 +47,12 @@ function generateSitemap() {
       lastmod: new Date().toISOString(),
       changefreq: 'monthly',
       priority: '0.8'
+    },
+    {
+      url: '/reading',
+      lastmod: new Date().toISOString(),
+      changefreq: 'monthly',
+      priority: '0.8'
     }
   ]
   
